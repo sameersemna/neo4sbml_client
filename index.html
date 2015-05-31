@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -17,6 +18,8 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="js/vendor/popoto-0.0.a5/css/popoto.min.css">
+
 </head>
 <body>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -32,7 +35,7 @@ n
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">D3 <3 Bootstrap</a>
+        <a class="brand" href="#">Neo4SBML Client</a>
                                         <div class="nav-collapse">
                                           <ul class="nav">
                                             <li class="active"><a href="#">These</a></li>
@@ -46,35 +49,64 @@ n
                                         </div><!--/.nav-collapse -->
       </div>
     </div>
-    <a href="https://github.com/zmaril/d3.js-boilerplate/tree/bootstrap"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <a href="https://github.com/zmaril/d3.js-boilerplate/tree/bootstrap"><img style="display:none;position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
   </div>
 
   <section id="main">
     <div class="fluid-container">
       <div class="fluid-row">
         <div class="offset1 span4">
-          <h1>Bootstrap.</h1>
+          <h1>Ne4SBML</h1>
           <p>
-            None of us got where we are solely by pulling ourselves up
-            by our bootstraps. We got here because somebody - a
-            parent, a teacher, an Ivy League crony or a few nuns -
-            bent down and helped us pick up our boots. -Thurgood Marshall 
+            
           </p>
         </div>
         <div class="span8">  
-          <div id="graphic"></div>
+          <div id="graphic" style="display:none;"></div>
+          <div id="graph"></div>
+          
+          <!-- By default the graph is generated in the HTML element with
+            ID "popoto-graph" -->
+			<div id="popoto-graph" class="ppt-div-graph" style="height:500px;">
+				<!-- Graph is generated here -->
+			</div>
+			
+			<!-- By default the query viewer is generated on the HTML element with
+            ID "popoto-query" If needed this id can be modified with
+            property "popoto.query.containerId" -->
+
+			<div id="popoto-query" class="ppt-container-query">
+				<!-- Query viewer is generated here -->
+			</div>
+			
+			<div id="popoto-cypher" class="ppt-container-query">
+				<!-- Query viewer is generated here -->
+			</div>
+			
+			<div id="popoto-results" class="ppt-container-query">
+				<!-- Query viewer is generated here -->
+			</div>
+    
         </div>
       </div>  
     </div>
   </section>
   <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
+  
+  
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/d3.v2.min.js"></script>
+    <script src="js/vendor/d3.min.js"></script>
     <script src="js/vendor/underscore.min.js"></script>
+    <script src="js/vendor/popoto-0.0.a5/js/popoto.min.js"></script>
+    
     <script src="js/index.js"></script>
+    <!--<script src="js/work.js"></script>-->
+    <script>
+    popoto.start("Species");
+    </script>
 </body>
 </html>
